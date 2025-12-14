@@ -1,0 +1,1 @@
+- set up auto day/night theme switching
