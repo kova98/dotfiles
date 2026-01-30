@@ -1,0 +1,21 @@
+#!/bin/bash
+
+OUTPUT_DIR="$HOME/Screenshots"
+mkdir -p "$OUTPUT_DIR"
+
+pkill -x slurp && exit 0
+
+wayfreeze & PID=$!
+sleep 0.1
+SELECTION="$(slurp 2>/dev/null || true)"
+kill "$PID" 2>/dev/null || true
+
+[ -z "$SELECTION" ] && exit 0
+
+grim -g "$SELECTION" - |
+  satty --filename - \
+    --output-filename "$OUTPUT_DIR/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png" \
+    --early-exit \
+    --actions-on-enter save-to-clipboard \
+    --save-after-copy \
+    --copy-command 'wl-copy'
