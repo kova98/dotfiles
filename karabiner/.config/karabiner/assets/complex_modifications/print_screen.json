@@ -1,0 +1,22 @@
+{
+  "title": "PrintScreen -> Cmd+Shift+X",
+  "rules": [
+    {
+      "description": "Pressing Print Screen sends Cmd+Shift+X",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "print_screen"
+          },
+          "to": [
+            {
+              "key_code": "x",
+              "modifiers": ["command", "shift"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
