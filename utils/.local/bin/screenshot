@@ -9,6 +9,8 @@ wayfreeze & PID=$!
 sleep 0.1
 SELECTION="$(slurp 2>/dev/null || true)"
 kill "$PID" 2>/dev/null || true
+wait "$PID" 2>/dev/null || true
+[ -n "$SELECTION" ] && sleep 0.2
 
 [ -z "$SELECTION" ] && exit 0
 
