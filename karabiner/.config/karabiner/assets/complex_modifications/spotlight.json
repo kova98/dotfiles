@@ -1,20 +1,21 @@
 {
-  "title": "Open Terminal with Cmd+Enter",
+  "title": "Option D to Spotlight",
   "rules": [
     {
-      "description": "Open Terminal with Command+Enter",
+      "description": "Open Spotlight with Option + D",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "return_or_enter",
+            "key_code": "d",
             "modifiers": {
-              "mandatory": ["command"]
+              "mandatory": ["option"]
             }
           },
           "to": [
             {
-              "shell_command": "open -a alacritty"
+              "key_code": "spacebar",
+              "modifiers": ["left_command"]
             }
           ]
         }
@@ -22,4 +23,3 @@
     }
   ]
 }
-
