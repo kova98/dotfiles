@@ -3,6 +3,9 @@ general.import = [ "~/.config/themes/current/alacritty.toml" ]
 [env]
 TERM = "xterm-256color"
 
+[terminal.shell]
+program = "/bin/zsh"
+
 [font]
 normal = { family = "JetBrainsMono", style = "Regular" }
 bold = { family = "JetBrainsMono", style = "Bold" }
@@ -14,7 +17,7 @@ size = 14.0
 padding.x = 14
 padding.y = 14
 decorations = "None"
-opacity = 1
+opacity = 0.95
 
 [keyboard]
 bindings = [
